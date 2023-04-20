@@ -1,39 +1,40 @@
+
+#zadacha 1
 import random;
-# zada4a 1;
+import bisect;
 
-num = random.randint(100, 999);
+def FillArray(n, arr):
+        for i in range(n):
+            arr.append(random.randint(1, 10))
+
+def CountSameValue(num, arr):
+    return arr.count(num);
+    
+arr = [];
+num = 5;
+
+FillArray(10, arr);
+print(CountSameValue(num, arr));
+
+#zadacha 2
+def FindLowerBoundValue(num, arr):
+    arr.sort();
+    i = bisect.bisect_left(arr, num)
+    return arr[i - 1];
+
+print(FindLowerBoundValue(5, arr));
 
 
-def SumDigits(n):
-    a = n // 100;
-    b = (n // 10) % 10;
-    c = n % 10;
-    return a + b + c;
+#zadacha 3
 
-print(num, ": ", SumDigits(num));
+def GetValue(key):
+     for k in dictionary:
+          if key in k:
+            return dictionary.get(k);
+dictionary = {
+    'AEIOULNSTRАВЕИНОРСТ' : 1, 'DGДКЛМПУ' : 2, 'BCMPБГЁЬЯ' : 3,
+    'FHVWYЙЫ' : 4, 'KЖЗХЦЧ' : 5, 'JXШЭЮ' : 8, 'QZФЩЪ' :10
+    }
 
-
-#zada4a 2
-
-s = 60;
-
-print('%.0f, %.0f, %.0f' % (s/6, s/6*4, s/6));
-
-
-#zada4a 3
-num = 385916;
-
-def LuckyTicket(num):
-    a  = num // 1000;
-    b = num % 1000;
-    half = a // 100 + (a // 10) % 10 + a % 10;
-    secondhalf = b // 100 + (b // 10)% 10 + b % 10;
-    return half == secondhalf;
-print(LuckyTicket(num)); 
-
-#zada4a 4
-
-def BreakChocolate(n, m, k):
-    return k < n * m and ((k % n == 0) or (k % m == 0))
-
-print(BreakChocolate(3, 2, 4));
+str = "PYTHON";
+print(sum(map(GetValue, str)));
