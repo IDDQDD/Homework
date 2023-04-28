@@ -1,40 +1,17 @@
 
 #zadacha 1
-import random;
-import bisect;
+import math
+def exp(a, b):
+    if b == 0 : return 1;
+    return a *exp(a, b - 1);
 
-def FillArray(n, arr):
-        for i in range(n):
-            arr.append(random.randint(1, 10))
-
-def CountSameValue(num, arr):
-    return arr.count(num);
-    
-arr = [];
-num = 5;
-
-FillArray(10, arr);
-print(CountSameValue(num, arr));
+print(exp(2, 3));
 
 #zadacha 2
-def FindLowerBoundValue(num, arr):
-    arr.sort();
-    i = bisect.bisect_left(arr, num)
-    return arr[i - 1];
 
-print(FindLowerBoundValue(5, arr));
+def sum(a, b):
+    if a == 0:
+        return b;
+    return sum(a - 1, b + 1);
 
-
-#zadacha 3
-
-def GetValue(key):
-     for k in dictionary:
-          if key in k:
-            return dictionary.get(k);
-dictionary = {
-    'AEIOULNSTRАВЕИНОРСТ' : 1, 'DGДКЛМПУ' : 2, 'BCMPБГЁЬЯ' : 3,
-    'FHVWYЙЫ' : 4, 'KЖЗХЦЧ' : 5, 'JXШЭЮ' : 8, 'QZФЩЪ' :10
-    }
-
-str = "PYTHON";
-print(sum(map(GetValue, str)));
+print(sum(2, 1));
